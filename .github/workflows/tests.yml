@@ -74,7 +74,6 @@ jobs:
         run: |
           cp .env.example .env
           php artisan key:generate
-          php artisan doctrine:generate:proxies
           php artisan storage:link
           php artisan migrate --seed
       - name: PHPUnit
@@ -84,6 +83,3 @@ jobs:
           DB_PASSWORD: password
           DB_DATABASE: laravel
           DB_USERNAME: sail
-      - name: Tear down Docker Compose
-        if: always()
-        run: docker-compose down
