@@ -31,4 +31,4 @@ COPY php.ini /etc/php/8.3/cli/conf.d/99-sail.ini
 
 EXPOSE 80/tcp
 
-ENTRYPOINT ["start-container"]
+CMD ["/usr/bin/supervisord"]
