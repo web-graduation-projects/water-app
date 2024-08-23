@@ -28,17 +28,17 @@ jobs:
 
       - name: Build and run Laravel Sail
         run: |
-          docker-compose -f docker-compose.yml up -d
-          docker-compose -f docker-compose.yml exec -T laravel.test composer install
-          docker-compose -f docker-compose.yml exec -T laravel.test php artisan key:generate
-          docker-compose -f docker-compose.yml exec -T laravel.test php artisan migrate --force
+          docker-compose up -d
+          docker-compose exec -T laravel.test composer install
+          docker-compose exec -T laravel.test php artisan key:generate
+          docker-compose exec -T laravel.test php artisan migrate --force
         env:
           DB_PASSWORD: password
           DB_DATABASE: laravel
           DB_USERNAME: sail
 
       - name: Run tests
-        run: docker-compose -f docker-compose.yml exec -T laravel.test php artisan test --coverage
+        run: docker-compose exec -T laravel.test php artisan test --coverage
         env:
           DB_PASSWORD: password
           DB_DATABASE: laravel
