@@ -2,8 +2,6 @@ FROM ubuntu:22.04
 
 LABEL maintainer="Your Name <your.email@example.com>"
 
-ARG WWWGROUP=1000
-
 WORKDIR /var/www/html
 
 ENV DEBIAN_FRONTEND=noninteractive
@@ -28,9 +26,6 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN setcap "cap_net_bind_service=+ep" /usr/bin/php8.3
-
-RUN groupadd --force -g $WWWGROUP sail
-RUN useradd -ms /bin/bash --no-user-group -g $WWWGROUP -u 1337 sail
 
 COPY php.ini /etc/php/8.3/cli/conf.d/99-sail.ini
 
