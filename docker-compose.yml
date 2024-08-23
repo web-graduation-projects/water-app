@@ -5,8 +5,9 @@ services:
         build:
             context: ./docker-build
             dockerfile: Dockerfile
-            args:
-                WWWGROUP: '${WWWGROUP}'
+        args:
+            WWWGROUP: '${WWWGROUP}'
+            WWWUSER: '${WWWUSER}'
         image: sail-8.3/app
         extra_hosts:
             - 'host.docker.internal:host-gateway'
@@ -29,9 +30,9 @@ services:
         deploy:
             resources:
                 limits:
-                    memory: 2G
+                    memory: 3G
                 reservations:
-                    memory: 1G
+                    memory: 1.5G
 
     mysql:
         image: 'mysql/mysql-server:8.0'
