@@ -78,8 +78,7 @@ jobs:
           php artisan migrate --seed
       - name: PHPUnit
         run: php artisan test --parallel --coverage-clover=coverage.xml
-      - uses: codecov/codecov-action@v4
-        env:
-          DB_PASSWORD: password
-          DB_DATABASE: laravel
-          DB_USERNAME: sail
+      - name: Upload Coverage to GitHub
+        uses: codecov/codecov-action@v4
+        with:
+          files: coverage.xml
