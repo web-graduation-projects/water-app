@@ -2,6 +2,9 @@ FROM ubuntu:22.04
 
 LABEL maintainer="Your Name <your.email@example.com>"
 
+ENV WWWGROUP=1000
+ENV WWWUSER=1000
+
 WORKDIR /var/www/html
 
 ENV DEBIAN_FRONTEND=noninteractive
