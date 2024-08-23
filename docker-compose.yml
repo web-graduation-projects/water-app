@@ -1,3 +1,5 @@
+version: '3.8'
+
 services:
     laravel.test:
         build:
@@ -24,6 +26,13 @@ services:
         depends_on:
             - mysql
             - redis
+        deploy:
+            resources:
+                limits:
+                    memory: 2G
+                reservations:
+                    memory: 1G
+
     mysql:
         image: 'mysql/mysql-server:8.0'
         ports:
