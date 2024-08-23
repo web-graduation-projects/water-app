@@ -17,15 +17,6 @@ jobs:
         image: docker:19.03
         ports:
           - 8000:8000
-        options: >-
-          --mount type=volume,source=sail-mysql,target=/var/lib/mysql
-          --mount type=volume,source=sail-redis,target=/data
-        healthcheck:
-          test: ["CMD", "curl", "--silent", "--fail", "http://localhost:8000/health"]
-          interval: 30s
-          retries: 3
-          start_period: 1m
-          timeout: 10s
 
     steps:
       - name: Checkout code
