@@ -17,7 +17,7 @@ class UserModelTest extends TestCase
         $user = User::factory()->create();
 
         $this->assertDatabaseHas('users', [
-            'id' => $user->id,
+            'idx' => $user->id,
             'name' => $user->name,
             'mobile' => $user->mobile,
         ]);
