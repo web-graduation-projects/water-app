@@ -6,7 +6,6 @@ use App\Http\Controllers\Controller;
 use App\Models\Marketplace;
 use App\Models\User;
 use App\Resources\MarketplaceResource;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
 class MarketplaceController extends Controller

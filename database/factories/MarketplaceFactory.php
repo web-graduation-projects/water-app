@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 
-
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Marketplace>
  */
@@ -46,7 +45,7 @@ class MarketplaceFactory extends Factory
     /**
      * Indicate that the marketplace belongs to a specific user.
      *
-     * @param \App\Models\User $user
+     * @param User $user
      * @return $this
      */
     public function forUser(User $user): self

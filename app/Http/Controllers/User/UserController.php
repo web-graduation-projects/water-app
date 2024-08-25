@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\Hash;
 class UserController extends Controller
 {
     public function store(UserRequest $request)
-    {       
+    {
         $user = User::create([
             'name' => $request->input('name'),
             'mobile' => $request->input('mobile'),
