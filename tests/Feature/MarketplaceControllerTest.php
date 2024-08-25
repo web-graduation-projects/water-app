@@ -24,6 +24,7 @@ class MarketplaceControllerTest extends TestCase
 {
     use RefreshDatabase;
     private Generator $faker;
+
     /**
      * Test the store method.
      *
@@ -43,7 +44,7 @@ class MarketplaceControllerTest extends TestCase
 
         // Make the POST request to the store method
         $resposne = $this->postJson(
-            '/api/marketplace', 
+            '/api/marketplace',
             $data
         );
 
@@ -57,7 +58,7 @@ class MarketplaceControllerTest extends TestCase
                     'name',
                     'mobile',
                 ],
-            ]
+            ],
         ]);
 
         // Assert that the marketplace and user are created in the database

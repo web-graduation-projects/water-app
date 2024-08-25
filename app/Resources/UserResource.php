@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Resources;
 
 use App\Models\User;

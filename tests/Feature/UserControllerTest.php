@@ -22,6 +22,7 @@ class UserControllerTest extends TestCase
 {
     use RefreshDatabase;
     private Generator $faker;
+
     /**
      * Test the store method.
      *
@@ -41,7 +42,7 @@ class UserControllerTest extends TestCase
 
         // Make the POST request to the store method
         $resposne = $this->postJson(
-            '/api/user', 
+            '/api/user',
             $data
         );
 
@@ -52,7 +53,7 @@ class UserControllerTest extends TestCase
                 'id',
                 'name',
                 'mobile',
-            ]
+            ],
         ]);
 
         // Assert that the marketplace and user are created in the database
