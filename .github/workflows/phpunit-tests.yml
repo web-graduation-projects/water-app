@@ -10,8 +10,6 @@ on:
 jobs:
   run-phpunit-tests:
     runs-on: ubuntu-latest
-<<<<<<< Updated upstream
-=======
     services:
       mysql:
         image: mysql/mysql-server:8.0
@@ -26,7 +24,6 @@ jobs:
           --health-interval=10s 
           --health-timeout=5s 
           --health-retries=5
->>>>>>> Stashed changes
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
