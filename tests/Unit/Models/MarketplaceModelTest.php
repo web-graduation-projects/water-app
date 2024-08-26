@@ -17,7 +17,7 @@ class MarketplaceModelTest extends TestCase
     {
         $user = User::factory()->create();
         Marketplace::create([
-            'namee' => $name = $user->name,
+            'name' => $name = $user->name,
             'mobile' => $mobile = $user->mobile,
             'user_id' => $user_id = $user->id,
             'password' => bcrypt('password'),
