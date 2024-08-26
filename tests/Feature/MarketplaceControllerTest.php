@@ -52,7 +52,7 @@ class MarketplaceControllerTest extends TestCase
 
         $resposne->assertJsonStructure([
             'data' => [
-                'ids',
+                'id',
                 'user' => [
                     'id',
                     'name',
