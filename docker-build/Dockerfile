@@ -33,4 +33,4 @@ COPY supervisord.conf /etc/supervisor/supervisord.conf
 
 EXPOSE 80/tcp
 
-CMD ["/usr/bin/php", "-S", "0.0.0.0:80", "-t", "/var/www/html"]
+CMD ["/usr/bin/php", "-S", "0.0.0.0:80", "-t", "/var/www/html/public"]
